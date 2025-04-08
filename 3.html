@@ -21,4 +21,26 @@
 
     <script>
         function fizzBuzz(arg) {
-            if (typeof arg !== 'number' || isNaN(arg))
+            if (typeof arg !== 'number' || isNaN(arg)) 
+                return 'Zły argument';
+
+            if (arg % 3 === 0 && arg % 5 === 0)
+                return 'FizzBuzz';
+
+            if (arg % 3 === 0) 
+                return 'Fizz';
+
+            if (arg % 5 === 0)
+                return 'Buzz';
+
+            return arg;
+        }
+
+        function checkFizzBuzz(){
+            const input = document.getElementById('a').value;
+            const result = fizzBuzz(Number(input));
+            document.getElementById('wynik').innerText = result;
+        }
+    </script>
+</body>
+</html>
