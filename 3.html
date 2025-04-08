@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Algorytmy</h1>
+    <ul>
+        <li><a href="index.html">Strona główna</a></li>
+        <li><a href="1.html">Silnia</a></li>
+        <li><a href="2.html">Dodawanie do 100</a></li>
+        <li><a href="3.html">Algorytm FizzBuzz</a></li>        
+    </ul>
+    <label for="a">Podaj liczbe:</label>
+    <input type="number" id="a" placeholder="Wpisz liczbę">
+    <button onclick="checkFizzBuzz()">Sprawdź</button>
+    <script>
+        function fizzBuzz(arg) {
+
+if (typeof arg !== 'number') 
+    return 'Zły argument';
+
+if (arg % 3 === 0) 
+    return 'Fizz';
+
+if (arg % 5 === 0)
+    return 'Buzz';
+
+if (arg % 3 === 0 && arg % 5 === 0)
+    return 'FizzBuzz';
+
+return arg;
+};
+function checkFizzBuzz(){
+    const input = document.getElementById('a').value;
+    const result = fizzBuzz(Number(input));
+    document.getElementById('wynik').innerText = result;
+}
+    </script>
+</body>
+</html>
