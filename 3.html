@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,31 +13,12 @@
         <li><a href="2.html">Dodawanie do 100</a></li>
         <li><a href="3.html">Algorytm FizzBuzz</a></li>        
     </ul>
-    <label for="a">Podaj liczbe:</label>
+
+    <label for="a">Podaj liczbę:</label>
     <input type="number" id="a" placeholder="Wpisz liczbę">
     <button onclick="checkFizzBuzz()">Sprawdź</button>
+    <p id="wynik"></p> <!-- Dodany element do wyświetlenia wyniku -->
+
     <script>
         function fizzBuzz(arg) {
-
-if (typeof arg !== 'number') 
-    return 'Zły argument';
-
-if (arg % 3 === 0) 
-    return 'Fizz';
-
-if (arg % 5 === 0)
-    return 'Buzz';
-
-if (arg % 3 === 0 && arg % 5 === 0)
-    return 'FizzBuzz';
-
-return arg;
-};
-function checkFizzBuzz(){
-    const input = document.getElementById('a').value;
-    const result = fizzBuzz(Number(input));
-    document.getElementById('wynik').innerText = result;
-}
-    </script>
-</body>
-</html>
+            if (typeof arg !== 'number' || isNaN(arg))
